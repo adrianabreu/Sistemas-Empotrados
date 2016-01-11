@@ -69,13 +69,19 @@ Con esto, pretendemos que el S.E sea capaz de detectar fallos y comunicarlos par
 
 ###Raspberry Pi 2: Model B
 
-[Caracteristicas][Rasp2B]
 **$$$:** 35 dolares
+
 **CPU:** ARM11 ARMv7 ARM Cortex-A7 4 núcleos @ 900 MHz 
+
 **Ram:** 1 GB LPDDR2 SDRAM 450 MHz 
+
 **Eth:** 10/100 Mbps 
+
 **Con:** 5v, 900mA, aunque depende de la carga de trabajo de los 4 cores 
+
 **HDD:** [microSD 16Gb][microSD] 
+
+[Más caracteristicas][Rasp2B]
 
 ------------------------
 
