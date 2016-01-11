@@ -71,6 +71,6 @@ La información orientativa de Tesla pretende restar ansiedad a quienes creen qu
 Para la obtención de la información meteorológica del día siguiente, el S.E ejecutará un [script de python][script-meteo] que nos proporcionará la información que deseamos.
 
 [info-meteo]: http://www.eltiempo.tv/Santa-Cruz-de-Tenerife/Santa-Cruz-de-Tenerife.html
-[script-meteo]: 
+[script-meteo]: https://github.com/AndresCidoncha/Sistemas-Empotrados/blob/master/Trabajo%20Final/get-meteo.py
 [Rasp2B]: http://www.xatakahome.com/trucos-y-bricolaje-smart/probamos-la-nueva-raspberry-pi-2-a-fondo
 [Tesla-bat]: http://faircompanies.com/blogs/view/tesla-powerwall-una-bateria-domestica-entre-casa-y-el-coche/
