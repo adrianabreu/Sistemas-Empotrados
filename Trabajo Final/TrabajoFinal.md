@@ -46,21 +46,22 @@ Los paneles fotovoltaicos que suministran la energia a la batería, proporcionan
 
 Con esto, pretendemos que el S.E sea capaz de detectar fallos y comunicarlos para ayudar en la solucion del problema. El S.E también será el encargado de registrar el consumo de la vivienda, el uso de la bateria, etc; para realizar tablas y mostrar resumenes de información en la aplicación asociada que permitirán al usuario poder revisar con facilidad el uso del sistema de autoabastecimiento.
 
-![Esquema de funcionamiento](https://github.com/AndresCidoncha/Sistemas-Empotrados/blob/master/Trabajo%20Final/EsquemaFinal.png?raw=true)
+![Esquema de funcionamiento][EsquemaFuncionamiento]
 
 ------------------------
 
 ##Requisitos
-* Batería autónoma: El sistema debe contar con una batería autonoma que le permita seguir en activo aunque se produzca alguna caida en cuanto al suministro elétrico. 
-Controlador de energia: Que gestione las placas solares de la casa, el consumo general y la bateria que habra instalada en la casa.
+* **Batería autónoma:** El sistema debe contar con una batería autonoma que le permita seguir en activo aunque se produzca alguna caida en cuanto al suministro elétrico. 
 
-* Gestionar placas solares: Incluye llevar registro de la potencia obtenida a lo largo de los dias, orientarlas hacia donde haya mas sol, controlar fallos etc.
+* **Controlador de energia:** Que gestione las placas solares de la casa, el consumo general y la bateria que habra instalada en la casa.
 
-* Gestionar bateria: Nivel de carga (potencia disponible para usar), aviso de carga baja antes de tirar de la instalacion electrica externa, control de ciclos de carga, control de fallos y control de carga con las placas solares
+    * **Gestionar placas solares:** Incluye llevar registro de la potencia obtenida a lo largo de los dias, orientarlas hacia donde haya mas sol, controlar fallos etc.
 
-* Consumo general: Simplemente registro de consumos, y (opcionalmente) gestion de luces automaticamente
+    * **Gestionar bateria:** Nivel de carga (potencia disponible para usar), aviso de carga baja antes de tirar de la instalacion electrica externa, control de ciclos de carga, control de fallos y control de carga con las placas solares
 
-* Sistema de prevision meteorologica: El S.E obtendrá de internet la [prevision del día siguiente][info-meteo] para, de acuerdo con ella, hacer planificaciones del almacenamiento y aprovechamiento de la carga.
+    * **Consumo general:** Simplemente registro de consumos, y (opcionalmente) gestion de luces automaticamente
+
+* **Sistema de prevision meteorologica:** El S.E obtendrá de internet la [prevision del día siguiente][info-meteo] para, de acuerdo con ella, hacer planificaciones del almacenamiento y aprovechamiento de la carga.
 
 ------------------------
 
@@ -74,7 +75,7 @@ Controlador de energia: Que gestione las placas solares de la casa, el consumo g
 **Ram:** 1 GB LPDDR2 SDRAM 450 MHz 
 **Eth:** 10/100 Mbps 
 **Con:** 5v, 900mA, aunque depende de la carga de trabajo de los 4 cores 
-**HDD:** microSD
+**HDD:** [microSD 16Gb][microSD] 
 
 ------------------------
 
@@ -83,7 +84,13 @@ Controlador de energia: Que gestione las placas solares de la casa, el consumo g
 ###Información meteorológica
 Para la obtención de la información meteorológica del día siguiente, el S.E ejecutará un [script de python][script-meteo] que nos proporcionará la información que deseamos. Con ello, el S.E podrá dar consejos acerca de como proceder con el consumo de los días siguientes (reservando más energía, por ejemplo).
 
-[info-meteo]: http://www.eltiempo.tv/Santa-Cruz-de-Tenerife/Santa-Cruz-de-Tenerife.html
-[script-meteo]: https://github.com/AndresCidoncha/Sistemas-Empotrados/blob/master/Trabajo%20Final/get-meteo.py
-[Rasp2B]: http://www.xatakahome.com/trucos-y-bricolaje-smart/probamos-la-nueva-raspberry-pi-2-a-fondo
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
 [Tesla-bat]: http://faircompanies.com/blogs/view/tesla-powerwall-una-bateria-domestica-entre-casa-y-el-coche/
+[EsquemaFuncionamiento]: https://github.com/AndresCidoncha/Sistemas-Empotrados/blob/master/Trabajo%20Final/EsquemaFinal.png?raw=true
+[info-meteo]: http://www.eltiempo.tv/Santa-Cruz-de-Tenerife/Santa-Cruz-de-Tenerife.html
+[Rasp2B]: http://www.xatakahome.com/trucos-y-bricolaje-smart/probamos-la-nueva-raspberry-pi-2-a-fondo
+[microSD]: http://www.amazon.es/Samsung-Evo-MB-SP16D-EU-Tarjeta/dp/B00J4G88ZU/ref=sr_1_6?s=electronics-accessories&ie=UTF8&qid=1452540757&sr=1-6&keywords=sd+clase+10
+[script-meteo]: https://github.com/AndresCidoncha/Sistemas-Empotrados/blob/master/Trabajo%20Final/get-meteo.py
