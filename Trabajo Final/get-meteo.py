@@ -6,9 +6,9 @@ import requests
 def get_url(city_name):
     #EJEMPLO: http://www.eltiempo.tv/Santa-Cruz-de-Tenerife/Santa-Cruz-de-Tenerife.html
     url = "http://www.eltiempo.tv/"
-	aux=city_name.replace(' ','-')
-	aux=url + aux + '/' + aux + ".html"
-	return aux
+    aux=city_name.replace(' ','-')
+    aux=url + aux + '/' + aux + ".html"
+    return aux
 
 def get(html, search_att, exp1, exp2):
 	att=[]
@@ -35,8 +35,8 @@ def get_meteo(city_name):
         hours = get(html,"detallada_hora",'>','<')
         temps = get(html,"detallada_icono",'title=\"','\">')
 
-        for i in range(len(horas)):
-            meteo[horas[i]]=temps[i]
+        for i in range(len(hours)):
+            meteo[hours[i]]=temps[i]
 
     return meteo
 
