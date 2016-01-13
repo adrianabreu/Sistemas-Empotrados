@@ -47,7 +47,7 @@ Se busca diseñar un sistema empotrado que realice el control central de un sist
 ##Desarrollo de la idea
 Para esta propuesta queriamos adoptar un enfoque open-hardware, que nos permita hacerlo llegar al máximo posible de personas, además de que cada uno pueda adaptarlo a las necesidades de cada casa. Se ha pensado en la implementacion con Raspberry Pi, por ser un producto barato y accesible al usuario, además de ser simple en cuanto a configuración. La raspberry nos permitirá además usarla como el propio servidor de la base de datos, con lo cual no dependeremos de servicios externos para almacenar y gestionar los datos del sistema de autoabastecimiento. 
 
-La batería principal de la casa, contará con una potencia de 10kWh, y proporcionará al S.E información de su estado: nivel de carga, salud de la bateria, etc. Proporcionará energía a las luces de la casa, así como a algunos aparatos eléctricos más. Para hacernos una idea sobre la capacidad real de esta batería:
+La batería principal de la casa, una Tesla Powerwall, contará con una potencia de 7kWh, y proporcionará al S.E información de su estado: nivel de carga, salud de la bateria, etc. Proporcionará energía a las luces de la casa, así como a algunos aparatos eléctricos más. Para hacernos una idea sobre la capacidad real de esta batería:
 
 * televisor de pantalla plana consumiría 0,1 kWh por hora;
 * una bombilla convencional, 0,1 kwh por hora;
@@ -56,7 +56,9 @@ La batería principal de la casa, contará con una potencia de 10kWh, y proporci
 * lavadora, 2,3 kWh por lavado;
 * secadora, 3,3 kWh por uso.
 
-[Mas info][Tesla-bat]
+[Más info (FairCompanies)][Tesla-bat] 
+[Más info (wikipedia)][Tesla-bat2] 
+[Página oficial][Tesla-off]
 
 Los [paneles fotovoltaicos][panelsinfo] que suministran la energia a la batería, pueden ser fijos o con orientación móvil, por lo que se debe implementar un sistema que permita controlar el movimiento. Para ello, basandonos en los valores recogidos por un conjunto de sensores LDR además de los propios valores de energia recogida aportado por los paneles, podemos determinar la orientación ideal para optimizar la obtención de energía.  Adicionalmente se puede utilizar la información de la predicción meteorológica para saber si el cambio de orientación llegaría a resultar rentable. Además, al analizar los valores de energía recogida, si algún panel supera un umbral de diferencia respecto a los paneles más cercanos, podemos detectar algún tipo de fallo en ese panel y comunicarlo al propietario del sistema.
 
@@ -81,7 +83,7 @@ Con esto, pretendemos que el S.E sea capaz de detectar fallos y comunicarlos par
 
 Se ha escogido una Raspberry al ser un producto que nos proporciona una gran flexibilidad, además de ser barato y accesible para la gran mayoría del público al que se dirige el producto. Cuenta con todas las opciones deseables (potencia, consumo reducido, conexión de red) y es fácilmente operable y mejorable modularmente.
 
-###Batería
+###Batería de la Raspberry
 
 **Voltaje:** 5 V
 **Intensidad:** 2.4/3.4 A
@@ -97,6 +99,23 @@ La [batería escogida][bateria] es un ejemplo, puede usarse cualquiera siempre y
 * *Deseable* que cuente con protecciones para picos de tensión.
 
 La batería se escoge sin tener demasiado en cuenta su peso puesto que no será un sistema portátil, pero siempre de un límite lógico. Al usarse como una especie de UPS, se busca que tenga una capacidad que permita afrontar periodos medianamente largos de ausencia de alimentación principal, además de que como un UPS, es ideal que tenga protecciones contra irregularidades en la alimentación principal, que permita proteger a la electrónica de la Raspberry. [Aquí][InfoBatt] encontramos pruebas con ella de satisfactorio resultado.
+
+###Tesla Powerwall
+
+**Voltaje:** 350-450 V
+**Potencia (continua):** 5 kW 
+**Potencia (picos):** 7 kW
+**Intensidad:** 5,8/8,6 A
+**Peso:** 100 kg 
+**Dimensiones:** 1300 mm x 860 mm x 180 mm.
+
+**Otras:**
+
+* Disponen de un control de temperatura y refrigeración por líquido.
+* El Powerwall no incluye el inversor DC-AC.
+* Diseño modular. Pueden conectarse hasta 9 paquetes. 
+* Tesla ofrece una garantía de 10 años.
+* Las patentes serán liberadas para ser open source.
 
 ------------------------
 
@@ -123,9 +142,11 @@ Para más simplicidad, el programa encargado de estas funciones está escrito ta
 [PYTHON]: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png
 
 [Tesla-bat]: http://faircompanies.com/blogs/view/tesla-powerwall-una-bateria-domestica-entre-casa-y-el-coche/
+[Tesla-bat2]: https://es.wikipedia.org/wiki/Tesla_Powerwall
+[Tesla-off]: https://www.teslamotors.com/powerwall
 [EsquemaFuncionamiento]: https://github.com/AndresCidoncha/Sistemas-Empotrados/blob/master/Trabajo%20Final/EsquemaFinal.png?raw=true
 [info-meteo]: http://www.eltiempo.tv/Santa-Cruz-de-Tenerife/Santa-Cruz-de-Tenerife.html
-[panels-info]: http://www.sfe-solar.com/paneles-solares-fotovoltaicos/solon/solon-black-220-16-240-245-250w/
+[panelsinfo]: http://www.sfe-solar.com/paneles-solares-fotovoltaicos/solon/solon-black-220-16-240-245-250w/
 [Rasp2B]: http://www.xatakahome.com/trucos-y-bricolaje-smart/probamos-la-nueva-raspberry-pi-2-a-fondo
 [microSD]: http://www.amazon.es/Samsung-Evo-MB-SP16D-EU-Tarjeta/dp/B00J4G88ZU/ref=sr_1_6?s=electronics-accessories&ie=UTF8&qid=1452540757&sr=1-6&keywords=sd+clase+10
 [bateria]: http://www.tecknet.co.uk/iep1500-black-new.html
