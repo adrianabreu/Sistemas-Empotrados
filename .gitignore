@@ -3,6 +3,9 @@
 *.elf
 *.out
 
+#DocumentosOnline
+*.gddoc
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
