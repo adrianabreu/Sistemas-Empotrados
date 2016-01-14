@@ -57,7 +57,9 @@ La batería principal de la casa, una Tesla Powerwall, contará con una potencia
 * secadora, 3,3 kWh por uso.
 
 [Más info (FairCompanies)][Tesla-bat] 
+
 [Más info (wikipedia)][Tesla-bat2] 
+
 [Página oficial][Tesla-off]
 
 Los [paneles fotovoltaicos][panelsinfo] que suministran la energia a la batería, pueden ser fijos o con orientación móvil, por lo que se debe implementar un sistema que permita controlar el movimiento. Para ello, basandonos en los valores recogidos por un conjunto de sensores LDR además de los propios valores de energia recogida aportado por los paneles, podemos determinar la orientación ideal para optimizar la obtención de energía.  Adicionalmente se puede utilizar la información de la predicción meteorológica para saber si el cambio de orientación llegaría a resultar rentable. Además, al analizar los valores de energía recogida, si algún panel supera un umbral de diferencia respecto a los paneles más cercanos, podemos detectar algún tipo de fallo en ese panel y comunicarlo al propietario del sistema.
